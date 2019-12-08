@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>React Native</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>React Native</h2>
+          <img
+            class="logo"
+            src="./assets/React-icon.svg.png"
+            alt="React-icon"
+          />
+        </section>
+
+        <section>
+          <h3>We can to write mobile applications in several ways</h3>
+          <div align="left">
+            <p class="fragment visible current-fragment">
+              1. Native for each mobile operating system
+            </p>
+            <p class="fragment visible current-fragment">2. WebView</p>
+            <div class="fragment visible current-fragment">
+              <p>3. Cross-platform development</p>
+              <ul>
+                <li class="fragment visible current-fragment">Xamarin (C#)</li>
+                <li class="fragment visible current-fragment">
+                  Flutter (Dart)
+                </li>
+                <li class="fragment visible current-fragment">
+                  React Native (JavaScript)
+                </li>
+                <li class="fragment visible current-fragment">
+                  Native Script (Angular)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>React Native</h3>
+          <div align="left">
+            <p class="fragment visible current-fragment">
+              1. Appeared in 2015
+            </p>
+            <p class="fragment visible current-fragment">
+              2. Does not use WebView and HTML technology
+            </p>
+            <p class="fragment visible current-fragment">
+              3. Made on the basis of the React JS library developed by Facebook
+            </p>
+            <p class="fragment visible current-fragment">
+              4. Combines the best parts of native development with React, a
+              best-in-class JavaScript library for building user interfaces
+            </p>
+          </div>
+          <div class="fragment margin color-blue visible current-fragment">
+            <p>
+              It is like React, but it uses native components instead of web
+              components as building blocks
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <section>
+            <h3>What is React?</h3>
+            <p>
+              React is a declarative, efficient, and flexible JavaScript library
+              for building user interfaces. It lets you compose complex UIs from
+              small and isolated pieces of code called “components”.
+            </p>
+          </section>
+          <!-- и давайте коротко обозначим его принципы -->
+          <section>
+            <h3>Basic principles</h3>
+            <div align="left">
+              <div class="fragment visible current-fragment">
+                <h5>1. Declarative</h5>
+                <p>
+                  Design simple views for each state in your application, and
+                  React will efficiently update and render just the right
+                  components when your data changes.
+                </p>
+              </div>
+              <div class="fragment visible current-fragment">
+                <h5>2. Component-Based</h5>
+                <p>
+                  Build encapsulated components that manage their own state,
+                  then compose them to make complex UIs.
+                </p>
+              </div>
+              <div class="fragment visible current-fragment">
+                <h5>3. Learn Once, Write Anywhere</h5>
+                <p>
+                  We don’t make assumptions about the rest of your technology
+                  stack, so you can develop new features in React without
+                  rewriting existing code.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h3>How it works?</h3>
+          <div class="fragment visible current-fragment flex">
+            <p>React-Component</p>
+            <img src="./assets/arrow-right-310628.svg" alt="arrow" />
+            <p>ReactJS</p>
+            <img src="./assets/arrow-right-310628.svg" alt="arrow" />
+            <p>DOM</p>
+          </div>
+          <div class="fragment visible current-fragment flex">
+            <p>React-Component</p>
+            <img src="./assets/arrow-right-310628.svg" alt="arrow" />
+            <p>React Native</p>
+            <img src="./assets/arrow-right-310628.svg" alt="arrow" />
+            <p>
+              IOS <br />
+              Android <br />
+              Somethink else
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Components</h3>
+
+          <section align="left">
+            <ul>
+              <li>In its simplest form, this is a function</li>
+              <li>Components can be reused, even in different projects</li>
+              <li>
+                Small components + small components + ... = large component
+              </li>
+            </ul>
+            <div class="fragment margin border visible current-fragment">
+              <p align="center">Difference</p>
+              <ul>
+                <li>
+                  component name begins with an uppercase letter
+                </li>
+                <li>
+                  Each component receives a list of attributes, as do HTML
+                  elements. In React, this list is called props.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <pre
+              class="hljs"
+              style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"
+            ><span class="hljs-function"> <span class="hljs-keyword" style="color: rgb(252, 194, 140);">function</span><span class="hljs-title" style="color: rgb(255, 255, 170);"> Button</span>(<span class="hljs-params">props</span>) </span>{
+  <span class="hljs-keyword" style="color: rgb(252, 194, 140);">return</span> <span class="xml"><span class="hljs-tag" style="color: rgb(98, 200, 243);">&lt;<span class="hljs-name" style="font-weight: 700;">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string" style="color: rgb(162, 252, 162);">"submit"</span>&gt;</span>{props.label}<span class="hljs-tag" style="color: rgb(98, 200, 243);">&lt;/<span class="hljs-name" style="font-weight: 700;">button</span>&gt;</span></span>;
+}
+            </pre>
+            <div class="fragment visible current-fragment">
+              <pre
+                class="hljs"
+                style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"
+              ><span class="hljs-function"><span class="hljs-keyword" style="color: rgb(252, 194, 140);">function</span> <span class="hljs-title" style="color: rgb(255, 255, 170);">formatName</span>(<span class="hljs-params">user</span>) </span>{
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">return</span> user.firstName + <span class="hljs-string" style="color: rgb(162, 252, 162);">' '</span> + user.lastName;
+}
+
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">const</span> user = {
+  firstName: <span class="hljs-string" style="color: rgb(162, 252, 162);">'Walter'</span>,
+  lastName: <span class="hljs-string" style="color: rgb(162, 252, 162);">'White'</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword" style="color: rgb(252, 194, 140);">function</span>  <span class="hljs-title" style="color: rgb(255, 255, 170);">CreateGreeting</span>(<span class="hljs-params">props</span>)</span>{
+  <span class="hljs-keyword" style="color: rgb(252, 194, 140);">return</span> (<span class="xml"><span class="hljs-tag" style="color: rgb(98, 200, 243);">&lt;<span class="hljs-name" style="font-weight: 700;">Text</span>&gt;</span>Hello, {formatName(user)}!<span class="hljs-tag" style="color: rgb(98, 200, 243);">&lt;/<span class="hljs-name" style="font-weight: 700;">Text</span>&gt;</span></span>)
+}
+              </pre>
+            </div>
+          </section>
+
+          <section>
+            <table>
+              <tr>
+                <td>React</td>
+                <td>React Native</td>
+              </tr>
+              <tr>
+                <td>div</td>
+                <td>View</td>
+              </tr>
+              <tr>
+                <td>span</td>
+                <td>Text</td>
+              </tr>
+              <tr>
+                <td>li, ul</td>
+                <td>FlatList</td>
+              </tr>
+              <tr>
+                <td>img</td>
+                <td>Image</td>
+              </tr>
+            </table>
+          </section>
+
+          <section>
+            <div class="flex-for-components">
+              <div class="flex-item">
+                <h4>1. General</h4>
+                <p>can be used on all operating systems.</p>
+                <p>
+                  Example: <br />
+                  Veiw, Text, Image et al.
+                </p>
+              </div>
+              <div class="flex-item fragment visible current-fragment">
+                <h4>2. Specific</h4>
+                <p>
+                  have ending "IOS" or "Android" and can used in the specified
+                  system
+                </p>
+                <p>
+                  Example: <br />
+                  ProgressBarAndroid, DatePickerAndroid, ProgressViewIOS,
+                  ActionSheetIOS et al.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h5>
+              But what if we did not find the necessary component on the
+              official website?
+            </h5>
+            <div class="fragment visible current-fragment">
+              <img src="./assets/diy.png" alt="do it yourself" />
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h3>JSX</h3>
+          <section>
+            <div class="fragment visible current-fragment">
+              <p>
+                It isn't magic. It is a syntax extension to JavaScript.
+              </p>
+            </div>
+            <pre
+              class="hljs"
+              style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"
+            ><span class="hljs-keyword" style="color: rgb(252, 194, 140);">const</span> name = <span class="hljs-string" style="color: rgb(162, 252, 162);">'Walter White'</span>;
+<span class="hljs-keyword" style="color: rgb(252, 194, 140);">const</span> element = <span class="xml"><span class="hljs-tag" style="color: rgb(98, 200, 243);">&lt;<span class="hljs-name" style="font-weight: 700;">h1</span>&gt;</span>Hello, {name}!<span class="hljs-tag" style="color: rgb(98, 200, 243);">&lt;/<span class="hljs-name" style="font-weight: 700;">h1</span>&gt;</span></span>;
+          </pre>
+            <div align="left" class="fragment visible current-fragment">
+              <p>
+                1. JSX is a compromise that allows us to develop React
+                components using HTML-like syntax.
+              </p>
+              <p>
+                2. It is not necessary to write JSX in React Native
+              </p>
+              <p>
+                3. JSX can be used on its own. This is not part of React.
+              </p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>CSS is not quite real</h3>
+            <div align="left" class="fragment visible current-fragment">
+              <p>
+                React Native give us three powerful ways by default to style our
+                application:
+              </p>
+              <p>1. CSS-In-JS or styled-component</p>
+              <p>2. StyleSheet</p>
+              <p>3. Style props</p>
+            </div>
+          </section>
+          
+          <section>
+            <h3>CSS-In-JS or styled-component</h3>
+            <p>
+              Allows you to write normal CSS in JavaScript. There are many
+              CSS-In-JS libraries.
+            </p>
+            <div class="fragment visible current-fragment flex flex-code">
+              <img src="./assets/CSS-In-JS.png" alt="code" />
+              <img
+              class="fragment visible current-fragment"
+              src="./assets/arrow-right-310628.svg"
+              alt="arrow"
+              />
+              <img
+              class="image-border fragment visible current-fragment"
+              src="./assets/CSS-In-JS-phone.png"
+              alt="How it views"
+              />
+            </div>
+          </section>
+          
+          <section>
+            <h3>StyleSheet</h3>
+            <p>
+              With StyleSheet, a javascript object is created to define the
+              styles for your elements and are assigned to the elements via
+              their style prop.
+            </p>
+            <div class="fragment visible current-fragment flex flex-code">
+              <img src="./assets/Stylesheet.png" alt="code" />
+              <img
+              class="fragment visible current-fragment"
+              src="./assets/arrow-right-310628.svg"
+              alt="arrow"
+              />
+              <img
+              class="image-border fragment visible current-fragment"
+              src="./assets/Stylesheet-phone.png"
+              alt="How it views"
+              />
+            </div>
+          </section>
+          
+          <section>
+            <h3>Style props</h3>
+            <p>
+              You can add styling to your component using style props you simply
+              add style props to your element it accepts an object of
+              properties.
+            </p>
+            <div class="fragment visible current-fragment flex flex-code">
+              <img src="./assets/props.png" alt="code" />
+              <img
+              class="fragment visible current-fragment"
+              src="./assets/arrow-right-310628.svg"
+              alt="arrow"
+              />
+              <img
+              class="image-border fragment visible current-fragment"
+              src="./assets/props-phone.png"
+              alt="How it views"
+              />
+            </div>
+          </section>
+          
+          <section>
+            <h3>react-native-svg</h3>
+            <p>
+              It isn't for text. It is for draw figures. We can used
+              react-native-svg for create specific figure.
+            </p>
+            <div class="fragment visible current-fragment flex flex-code">
+              <img src="./assets/react-native-svg.png" alt="code" />
+              <img
+              class="fragment visible current-fragment"
+              src="./assets/arrow-right-310628.svg"
+              alt="arrow"
+              />
+              <img
+              class="image-border fragment visible current-fragment"
+              src="./assets/react-native-svg-phone.png"
+              alt="How it views"
+              />
+            </div>
+          </section>
+        </section>
+        
+        <section>
+          <!-- Итак, в начале мы сказали, что он кроссплатформенный, 
+            но это не совсем так. Давайте вспомним специфические компоненты. 
+            Они специфические не просто так, а из-за того, что у каждой платформы есть свое понятие дизайна 
+            и приложение должно ему отвечать. Что принято делать в iOS? 
+            Внизу TabBar, в нем принято переключать экраны: главная, профиль, поиск. 
+            Сверху NavigationBar, и в нем принято писать название и кнопки слева-справа (слева обычно back стоит, а справа — какое-нибудь действие). 
+            А в Android все не так. Есть тоже NavigationBar, но он другой, в нем не принято кнопки делать. 
+            Для этого есть отдельный компонент, называется ToolBar-ом. 
+            В Android-е принято делать SegmentedActivity — она сверху, очень похожа на iOS TabBar, но механика работы у него абсолютно другая. 
+            Если в TabBar-е мы не можем свайпом переключать экраны, то в Android-е это можно делать, и это принято делать, и именно так оно и работает.-->
+          <h3>Cross-platform</h3>
+          <div class="fragment visible current-fragment">
+            <ul>
+              <li>
+                interactive components (navigation, menus, ...) will be
+                different
+              </li>
+              <li>
+                the layout of the application may be different
+              </li>
+            </ul>
+            <div class="fragment visible current-fragment">
+              <ul>
+                <li>
+                  <span class="text-red">BUT </span>the logical components of
+                  the application will be the same
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>IDE</h3>
+          <section>
+            <div class="flex-for-components">
+              <div
+                class="fragment visible current-fragment flex-item"
+                align="left"
+              >
+                <p class="flex-title">If you write native:</p>
+                <p>XCode for IOS</p>
+                <p>Android Studio for Android</p>
+              </div>
+              <div
+                class="fragment visible current-fragment flex-item"
+                align="left"
+              >
+                <p class="flex-title">If you use React Native:</p>
+                <p>
+                  you can use your favorite <br />
+                  development environment
+                </p>
+              </div>
+            </div>
+
+            <div class="fragment visible current-fragment margin border">
+              <p class="text-red">BUT</p>
+              <p>until we touch the native code</p>
+              <p class="text-red">AND</p>
+              <p>
+                if we want make compilation we must use special IDE.
+              </p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h3>debuggers</h3>
+          <ul align="left">
+            <li>Chrome Developer Tools</li>
+            <li>React Native Debugger</li>
+            <li>all the usual ones that you used to use</li>
+          </ul>
+        </section>
+
+        <section>
+          <h6>You can learn more</h6>
+          <div align="left">
+            <ul>
+              <li>
+                <a href="https://en.reactjs.org/">https://en.reactjs.org/</a>
+              </li>
+              <li>
+                <a href="https://facebook.github.io/react-native/"
+                  >https://facebook.github.io/react-native/</a
+                >
+              </li>
+              <li>
+                <a href="https://thefinnternet.com/styling-in-react-native/"
+                  >https://thefinnternet.com/styling-in-react-native/</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://blog.bitsrc.io/styling-in-react-native-c48caddfbe47"
+                  >https://blog.bitsrc.io/styling-in-react-native-c48caddfbe47</a
+                >
+              </li>
+            </ul>
+            <div class="fragment visible current-fragment margin">
+              <p>
+                here you can try to write code and see the result in the
+                selected operating system
+                <a href="https://snack.expo.io/">https://snack.expo.io/</a>
+              </p>
+            </div>
+            <div class="fragment visible current-fragment margin">
+              <p>
+                here you can see and touch examples of code which are added in
+                presentation as images
+                <a href="https://codepen.io/bogdeebee/project/editor/DaJYrB"
+                  >https://codepen.io/bogdeebee/project/editor/DaJYrB</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
